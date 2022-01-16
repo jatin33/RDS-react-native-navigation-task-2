@@ -11,21 +11,32 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 function FirstScreen({navigation}: Props) {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to details screen"
-        onPress={() => navigation.navigate('Details')}
-      />
+      <Text style={styles.mainText}>Home Screen</Text>
+      <View style={styles.button}>
+        <Button
+          title="Go to details screen"
+          onPress={() => navigation.navigate('Details')}
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    alignContent: 'center',
+    alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
+    flex: 1,
+  },
+  button: {
+    borderColor: 'blue',
+    borderWidth: 2,
+    borderRadius: 8,
+    marginTop: 20,
+  },
+  mainText: {
+    fontSize: 40,
   },
 });
 
